@@ -31,6 +31,12 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
+.cf:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .wrapper {
   width: 1170px;
    margin: 0 auto;
@@ -245,23 +251,74 @@ transform: translateY(4px);/*下に動く*/ border-bottom: none;/*線を消す*/
 }
 
 /*画像マウスオーバー時の挙動*/
-.figure {
-  background: #00bc9c;
-  content: ＋ ;
+.a0__trans {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 570px;
+  float: left;
+  padding-right: 30px;
+  padding-top: 30px;
 }
-.figure img {
-  opacity: 1;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+
+.a0__trans__desc {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 570px;
+  height: 455px;
+  background-color: #00bc9c;
+  opacity: 0.9;
+  transition: all 0s;
 }
-.figure:hover img {
-  opacity: .1;
+.a0__trans:hover .a0__trans__desc {bottom: 0;}
+.a0__trans__desc__txt {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  margin-top: -.5em;/*「アイコンフォント一文字の半分」のネガティブマージン*/
+  width: 100%;
+}
+/*マウスオーバー時の挙動２*/
+.a1__trans {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 270px;
+  float: left;
+  padding-right: 30px;
+  padding-top: 30px;
+}
+
+.a1__trans__desc {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 270px;
+  height: 190px;
+  background-color: #00bc9c;
+  opacity: 0.9;
+  transition: all 0.5s;
+}
+.a1__trans:hover .a1__trans__desc {bottom: 0;}
+.a1__trans__desc__txt {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  margin-top: -.5em;/*「アイコンフォント一文字の半分」のネガティブマージン*/
+  width: 100%;
 }
 
 /*最後のところ*/
 .ct-1 p {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.ct-2-images :nth-child(2n-1) {
+  float: left;
 }
 
 
